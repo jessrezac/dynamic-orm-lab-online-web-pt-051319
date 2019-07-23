@@ -65,7 +65,7 @@ class InteractiveRecord
     attributes_for_insert = []
     
     attributes.each do |k, v|
-      attributes_for_insert << "#{send(k)} = #{v}"
+      attributes_for_insert << "#{k} = #{v}"
     end
     
     sql = "SELECT * FROM #{attributes_for_insert.join(', ')}"
