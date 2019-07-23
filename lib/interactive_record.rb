@@ -69,7 +69,7 @@ class InteractiveRecord
 
     sql = "SELECT * FROM #{table_name} WHERE #{attributes_for_insert.join(', ')}"
 
-    DB[:conn].execute(sql).first
+    DB[:conn].execute(sql)
   
   end
   
