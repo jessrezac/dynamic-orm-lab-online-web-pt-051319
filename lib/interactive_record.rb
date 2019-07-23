@@ -61,7 +61,6 @@ class InteractiveRecord
   end
   
   def self.find_by(attributes)
-    binding.pry
     attributes_for_insert = []
     
     attributes.each do |k, v|
