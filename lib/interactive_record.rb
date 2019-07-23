@@ -67,10 +67,10 @@ class InteractiveRecord
       attributes_for_insert << "#{k} = #{v}"
     end
 
+    sql = "SELECT * FROM #{table_name} WHERE #{attributes_for_insert.join(', ')}"
+
     binding.pry
 
-    
-    sql = "SELECT * FROM #{table_name} WHERE #{attributes_for_insert.join(', ')}"
     
     DB[:conn].execute(sql)
   
