@@ -60,9 +60,15 @@ class InteractiveRecord
     DB[:conn].execute(sql)
   end
   
-  def self.find_by(attribute)
+  def self.find_by(attributes)
     binding.pry
-    sql = "SELECT * FROM #{attribute.each {|k, v| #{k} = #{v}}"
+    attributes_for_insert = []
+    
+    attributes.each do |k, v|
+      attributes_for_insert << "#{send(k)} = #{v}"
+    end
+    
+    sql = "SELECT * FROM #{attributes_for_insert.join(', ')}"
     
     DB[:conn].execute(sql)
   
