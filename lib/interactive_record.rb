@@ -64,7 +64,7 @@ class InteractiveRecord
     attributes_for_insert = []
     
     attributes.each do |k, v|
-      attributes_for_insert << "#{k} = #{v}"
+      attributes_for_insert << "#{k} = '#{v}'"
     end
 
     sql = "SELECT * FROM #{table_name} WHERE #{attributes_for_insert.join(', ')}"
