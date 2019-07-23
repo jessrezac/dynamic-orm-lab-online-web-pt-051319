@@ -64,6 +64,7 @@ class InteractiveRecord
     attributes_for_insert = []
     
     attributes.each do |k, v|
+      binding.pry
       attributes_for_insert << "#{k} = #{v}"
     end
     
