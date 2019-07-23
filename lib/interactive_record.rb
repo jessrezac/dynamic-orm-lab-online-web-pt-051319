@@ -64,9 +64,11 @@ class InteractiveRecord
     attributes_for_insert = []
     
     attributes.each do |k, v|
-      binding.pry
       attributes_for_insert << "#{k} = #{v}"
     end
+
+      binding.pry
+
     
     sql = "SELECT * FROM #{table_name} WHERE #{attributes_for_insert.join(', ')}"
     
